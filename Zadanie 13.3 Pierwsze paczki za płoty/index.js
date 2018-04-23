@@ -12,18 +12,17 @@ process.stdin.on('readable', function() {
 
         switch (instruction) {
 
-        case '/exit':
-            process.stdout.write('Quitting app!\n');
-            process.exit();
-            break;
-        
-        case '/getOSinfo':
+            case '/getOSinfo':
 
-            OSinfo.print();
-            break;
+                OSinfo.print();
+                break;
             
-        default:
-            process.stderr.write('Wrong instruction!\n');
+            case '/exit':
+                process.stdout.write('Quitting app!\n');
+                process.exit();
+                
+            default:
+                process.stderr.write('Wrong instruction!\n');
         }
     }
 });
