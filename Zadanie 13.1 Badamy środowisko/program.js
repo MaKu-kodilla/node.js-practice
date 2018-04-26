@@ -10,27 +10,20 @@ process.stdin.on('readable', function() {
     if (input !== null) {
         var instruction = input.toString().trim();
         switch (instruction) {
-
-           case ('/exit'):
-
-            process.stdout.write('Quitting app!\n')
-            process.exit();
-            break;
-
             case ('/info'):
-
-            process.stdout.write('Node:\n')
-            console.log(`Version: ${process.version}`);
-            break;
-            
+                process.stdout.write('Node version:\n')
+                console.log(process.version);
+                break;
             case('/lang'): 
-
-            process.stdout.write('Environment:\n')
-            console.log(process.env);
-            break;
-
-         default:
-            process.stderr.write('Wrong instruction!\n');
+                process.stdout.write('Language:\n')
+                console.log(process.env.lang);
+                break;
+            case ('/exit'):
+                process.stdout.write('Quitting app!\n')
+                process.exit();
+                break;
+            default:
+                process.stderr.write('Wrong instruction!\n');
         }
     }
 });
