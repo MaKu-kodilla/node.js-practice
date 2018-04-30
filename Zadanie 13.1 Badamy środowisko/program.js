@@ -16,7 +16,7 @@ process.stdin.on('readable', function() {
                 break;
             case('/lang'): 
                 process.stdout.write('Language:\n')
-                console.log(process.env.lang);
+                console.log(process.env.LANG);
                 break;
             case ('/exit'):
                 process.stdout.write('Quitting app!\n')
