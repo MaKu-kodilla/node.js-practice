@@ -3,7 +3,7 @@ function getOStime (uptime) {
     var minutesTotal = uptime / 60 % 60;
     var secondsLeft = uptime % 60;
 
-    if (hoursTotal !== 0) {
+    if (hoursTotal >= 1) {
         return Math.floor(hoursTotal) + ' h ' + Math.floor(minutesTotal) + ' min ' + Math.floor(secondsLeft) + ' sec';
     } else {
         return Math.floor(minutesTotal) + ' min ' + Math.floor(secondsLeft) + ' sec';
